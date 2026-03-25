@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CADA CONSULTING</title>
+
+    <!-- Bootstrap CSS-->
+     <link href="https://cdn.jsdelivr.net/npm/Bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+     <style>
+        body { 
+            background-color: darkseagreen;
+        }
+     </style>
+</head>
+<body>
+    
+    <!-- NAVBAR -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="NAVBAR" href="#">CADA CONSULTING</a>
+            <button class="navbar-toggler" type="button" data-bs-toggler="collapse" data-bs-target="#menu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-na ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="acceuil">Acceuil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="à propos">A Propos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="réalisations">Réalisations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="témoignages">Témoignages</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact"></a>Contact</li>
+                </ul>
+            </div>
+        </div>
+     </nav>
+     <!-- REALISATIONS PREMIUM AVEC BOUTONS -->
+<section id="realisations" class="py-5" style="background:#f8f9fa;">
+    <div class="container">
+
+        <!-- TITRE -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold display-5">Réalisations</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="row g-4 text-center">
+
+            <!-- ITEM 1 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="real-card p-5 h-100">
+                    <div class="icon mb-3">⚖️</div>
+                    <h2 class="counter">+200</h2>
+                    <h5 class="title">Affaires gagnées</h5>
+                    <p class="desc">
+                        Un taux de réussite élevé dans plusieurs domaines du droit.
+                    </p>
+
+                    <a href="#" class="btn-real mt-3">
+                        Voir plus
+                    </a>
+                </div>
+            </div>
+
+            <!-- ITEM 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="real-card p-5 h-100">
+                    <div class="icon mb-3">📚</div>
+                    <h2 class="counter">+50</h2>
+                    <h5 class="title">Publications</h5>
+                    <p class="desc">
+                        Articles et contributions dans des revues juridiques spécialisées.
+                    </p>
+
+                    <a href="#" class="btn-real mt-3">
+                        Découvrir
+                    </a>
+                </div>
+            </div>
+
+            <!-- ITEM 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="real-card p-5 h-100">
+                    <div class="icon mb-3">🏆</div>
+                    <h2 class="counter">+10</h2>
+                    <h5 class="title">Distinctions</h5>
+                    <p class="desc">
+                        Récompenses pour excellence et professionnalisme juridique.
+                    </p>
+
+                    <a href="#" class="btn-real mt-3">
+                        En savoir plus
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- FORMULAIRE CADA -->
+<section id="contact" class="py-5" style="background:#f8f9fa;">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Demande de consultation</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+
+                <form id="clientForm" class="p-4 shadow rounded bg-white">
+
+                    <div class="mb-3">
+                        <label>Nom complet</label>
+                        <input type="text" class="form-control" id="nom" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Téléphone</label>
+                        <input type="text" class="form-control" id="telephone" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Type de service</label>
+                        <select class="form-control" id="service">
+                            <option>Droit des affaires</option>
+                            <option>Droit de la famille</option>
+                            <option>Litiges</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Description du besoin</label>
+                        <textarea class="form-control" id="message"></textarea>
+                    </div>
+
+                    <!-- BOUTON ENVOI -->
+                    <button type="button" onclick="envoyerForm()" class="btn btn-success w-100">
+                        Envoyer votre formulaire
+                    </button>
+
+                    <!-- BOUTON TELECHARGER (CACHÉ AU DEBUT) -->
+                    <button type="button" onclick="telecharger()" 
+                            id="btnDownload" 
+                            class="btn btn-primary w-100 mt-3" 
+                            style="display:none;">
+                        Télécharger le formulaire
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<script> 
+let donneesClient = {};
+
+// ✅ ENVOI + ENREGISTREMENT
+function envoyerForm() {
+
+const nom = document.getElementById("nom").value;
+const email = document.getElementById("email").value;
+const tel = document.getElementById("telephone").value;
+const service = document.getElementById("service").value;
+const message = document.getElementById("message").value;
+
+// Validation
+if (!nom || !email || !tel) {
+alert("Veuillez remplir tous les champs obligatoires !");
+return;
+}
+
+// Stockage
+donneesClient = { nom, email, tel, service, message };
+
+// Sauvegarde locale
+localStorage.setItem("demandeClient", JSON.stringify(donneesClient));
+
+// Afficher bouton télécharger
+document.getElementById("btnDownload").style.display = "block";
+
+alert("✅ Formulaire envoyé avec succès !");
+}
+
+// ✅ TELECHARGEMENT
+function telecharger() {
+
+const data = JSON.parse(localStorage.getItem("demandeClient"));
+
+if (!data) {
+alert("Aucune donnée trouvée !");
+return;
+}
+
+const content = `
+CADA CONSULTING
+-------------------------
+
+Nom : ${data.nom}
+Email : ${data.email}
+Téléphone : ${data.tel}
+Service : ${data.service}
+
+Description :
+${data.message}
+`;
+// ==========================
+// 🔥 PDF ULTRA PRO
+// ==========================
+const { jsPDF } = window.jspdf;
+const doc = new jsPDF();
+
+// 🎨 Fond
+doc.setFillColor(245, 245, 245);
+doc.rect(0, 0, 210, 297, "F");
+
+// 🖼️ LOGO (remplace le chemin)
+const logo = new Image();
+logo.src = "logo.png"; // 🔁 remplace par ton logo
+
+logo.onload = function () {
+
+    // Ajouter logo
+    doc.addImage(logo, "PNG", 80, 10, 50, 20);
+
+    // Titre
+    doc.setFont("Times", "Bold");
+    doc.setFontSize(18);
+    doc.setTextColor(201, 169, 110);
+    doc.text("DEMANDE DE CONSULTATION", 105, 40, null, null, "center");
+
+    // Numéro dossier
+    const dossier = "Dossier N° " + Math.floor(Math.random() * 100000);
+    doc.setFontSize(10);
+    doc.setTextColor(100);
+    doc.text(dossier, 150, 50);
+
+    // Ligne
+    doc.setDrawColor(201, 169, 110);
+    doc.line(20, 55, 190, 55);
+
+    // Contenu
+    doc.setFont("Times", "Normal");
+    doc.setFontSize(12);
+    doc.setTextColor(0);
+
+    const lines = doc.splitTextToSize(content, 170);
+    doc.text(lines, 20, 70);
+
+    // Signature
+    doc.setFont("Times", "Italic");
+    doc.setFontSize(10);
+    doc.text("Signature du cabinet", 20, 250);
+
+    doc.setFont("Times", "Bold");
+    doc.text("CADA Consulting", 20, 255);
+
+    // Télécharger PDF
+    doc.save("demande_cada.pdf");
+};
+
+// ==========================
+// 🔁 TON CODE ORIGINAL (INTOUCHÉ)
+// ==========================
+const blob = new Blob([content], { type: "text/plain" });
+const link = document.createElement("a");
+
+link.href = URL.createObjectURL(blob);
+link.download = "demande_cada.txt";
+link.click();
+}
+</script>
+
+</body>
+</html>
