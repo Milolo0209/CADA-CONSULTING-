@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CADA Consulting</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .hero {
+            background: url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f') center/cover no-repeat;
+            color: white;
+            padding: 120px 20px;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            height: 100vh;
+        }
+        .section {
+            padding: 60px 20px;
+        }
+        .footer {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        /* CARD PREMIUM */
+.service-card {
+    background: #fff;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ligne dorée animation */
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: #c9a96e;
+    transition: 0.4s;
+}
+
+.service-card:hover::before {
+    width: 100%;
+}
+
+/* Hover effet premium */
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* Icônes */
+.service-card .icon {
+    font-size: 40px;
+}
+
+/* Texte */
+.service-card p {
+    font-size: 0.95rem;
+}
+/* DIVIDER */
+.divider {
+    width: 60px;
+    height: 3px;
+    background: #c9a96e;
+    margin: 10px auto;
+}
+
+/* CARD */
+.real-card {
+    background: #fff;
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.05);
+}
+
+/* HOVER */
+.real-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* ICON */
+.real-card .icon {
+    font-size: 40px;
+}
+
+/* CHIFFRE */
+.real-card .counter {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1a1a1a;
+}
+
+/* TITRE */
+.real-card .title {
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+/* TEXTE */
+.real-card .desc {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* LIGNE DESIGN */
+.real-card::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #c9a96e;
+    margin: 15px auto 0;
+}
+/* CARD */
+.testimonial-card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* GUILLEMET DECORATIF */
+.testimonial-card::before {
+    content: "“";
+    font-size: 60px;
+    color: #c9a96e;
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    opacity: 0.2;
+}
+
+/* TEXTE */
+.testimonial-card .quote {
+    font-style: italic;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* AVATAR */
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* HOVER */
+.testimonial-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+/* DIVIDER */
+.divider {
+    width: 60px;
+    height: 3px;
+    background: #c9a96e;
+    margin: 10px auto;
+}
+#contact .btn-success {
+    background: #28a745;
+    border: none;
+}
+
+#contact .btn-primary {
+    background: #c9a96e;
+    border: none;
+}
+
+#contact .btn:hover {
+    opacity: 0.9;
+}
+
+.divider {
+    width: 60px;
+    height: 3px;
+    background: #c9a96e;
+    margin: 10px auto;
+}
+#inscriptionForm {
+    transition: all 0.5s ease;
+}
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">CADA Consulting</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#apropos">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#realisations">Réalisations</a></li>
+                <li class="nav-item"><a class="nav-link" href="#temoignages">Témoignages</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- ACCUEIL -->
+<section id="accueil" class="hero d-flex align-items-center text-center">
+    <div class="container">
+
+        <h1 class="fw-bold mb-3">CADA Consulting</h1>
+
+        <p class="mb-4 text-light">
+            Cabinet juridique spécialisé en conseil et accompagnement stratégique
+        </p>
+
+        <!-- BOUTONS INSCRIPTION / CONNEXION -->
+        <div class="d-flex justify-content-center align-items-center gap-3 flex-wrap">
+
+            <!-- S'INSCRIRE -->
+            <a href="javascript:void(0)" onclick="toggleForm()" class="btn btn-gold px-4 py-2">
+    S’inscrire</a>
+
+            <!-- TEXTE -->
+            <span class="text-light">
+                J’ai déjà un compte ?
+            </span>
+
+            <!-- CONNEXION -->
+            <a href="#connexion" class="btn btn-outline-light px-4 py-2">
+                Connexion
+            </a>
+
+        </div>
+
+        <!-- CONTACT -->
+        <div class="mt-4">
+            <a href="#contact" class="btn btn-primary btn-lg">
+                Contactez-nous
+            </a>
+        </div>
+
+    </div>
+</section>
+
+<!-- FORMULAIRE INSCRIPTION -->
+<section id="inscriptionForm" class="py-5" style="display:none; background:#f8f9fa;">
+    <div class="container">
+
+        <div class="text-center mb-4">
+            <h2>Créer un compte</h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+
+                <form class="p-4 shadow bg-white rounded">
+
+                    <div class="mb-3">
+                        <label>Nom</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Postnom</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Prénom</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Métier / Profession</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control">
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Contact</label>
+                        <input type="text" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-gold w-100">
+                        S’inscrire
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleForm() {
+    const form = document.getElementById("inscriptionForm");
+
+    if (form.style.display === "none") {
+        form.style.display = "block";
+
+        // scroll fluide vers le formulaire
+        form.scrollIntoView({ behavior: "smooth" });
+    } else {
+        form.style.display = "none";
+    }
+}
+</script>
+
+<!-- A PROPOS -->
+<section id="apropos" class="section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">À propos</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <p>
+                    Maître CADA est un avocat expérimenté avec plusieurs années de pratique dans divers domaines du droit.
+                    Diplômé des meilleures universités, il accompagne particuliers et entreprises avec rigueur et professionnalisme.
+                </p>
+                <ul>
+                    <li>Master en droit des affaires</li>
+                    <li>Certifié en arbitrage international</li>
+                    <li>Plus de 10 ans d'expérience</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+<img src="https://images.unsplash.com/photo-1556157382-97eda2d62296" class="img-fluid rounded">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SERVICES PREMIUM -->
+<section id="services" class="py-5" style="background:#ffffff;">
+    <div class="container">
+
+        <!-- TITRE -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold">Nos Services</h2>
+            <div style="width:60px;height:3px;background:#c9a96e;margin:10px auto;"></div>
+        </div>
+
+        <div class="row g-4 text-center">
+
+            <!-- SERVICE 1 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="service-card p-4 h-100">
+                    <div class="icon mb-3">⚖️</div>
+                    <h5 class="fw-bold">Droit des affaires</h5>
+                    <p class="text-muted">
+                        Conseil stratégique et accompagnement juridique des entreprises 
+                        et entrepreneurs dans leurs activités.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SERVICE 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="service-card p-4 h-100">
+                    <div class="icon mb-3">👨‍👩‍👧</div>
+                    <h5 class="fw-bold">Droit de la famille</h5>
+                    <p class="text-muted">
+                        Assistance dans les affaires familiales : divorce, succession 
+                        et garde d’enfants.
+                    </p>
+                </div>
+            </div>
+
+            <!-- SERVICE 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="service-card p-4 h-100">
+                    <div class="icon mb-3">🏛️</div>
+                    <h5 class="fw-bold">Litiges</h5>
+                    <p class="text-muted">
+                        Représentation devant les juridictions compétentes et gestion 
+                        des conflits avec expertise.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- REALISATIONS PREMIUM MODELISE -->
+<section id="realisations" class="py-5" style="background:#f8f9fa;">
+    <div class="container">
+
+        <!-- TITRE -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold">Réalisations</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="row g-4 text-center">
+
+            <!-- ITEM -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="real-card p-4 h-100">
+                    <div class="icon mb-3">⚖️</div>
+                    <h2 class="counter">+200</h2>
+                    <h6 class="title">Affaires gagnées</h6>
+                    <p class="desc">
+                        Un taux de réussite élevé dans plusieurs domaines du droit.
+                    </p>
+                    <a href="#" class="btn-real mt-3">
+                        Voir plus
+                     </a>   
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="real-card p-4 h-100">
+                    <div class="icon mb-3">📚</div>
+                    <h2 class="counter">+50</h2>
+                    <h6 class="title">Publications</h6>
+                    <p class="desc">
+                        Articles et contributions dans des revues juridiques spécialisées.
+                    </p>
+                    <a href="#" class="btn-real mt-3">
+                        Voir plus
+                     </a>   
+                </div>
+            </div>
+
+            <!-- ITEM -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="real-card p-4 h-100">
+                    <div class="icon mb-3">🏆</div>
+                    <h2 class="counter">+10</h2>
+                    <h6 class="title">Distinctions</h6>
+                    <p class="desc">
+                        Récompenses pour excellence et professionnalisme juridique.
+                    </p>
+                    <a href="#" class="btn-real mt-3">
+                        Voir plus
+                     </a>   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TEMOIGNAGES PREMIUM -->
+<section id="temoignages" class="py-5" style="background:#ffffff;">
+    <div class="container">
+
+        <!-- TITRE -->
+        <div class="text-center mb-5" data-aos="fade-up">
+            <h2 class="fw-bold">Témoignages</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="row g-4">
+
+           <!-- TEMOIGNAGE 1 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="testimonial-card p-4 h-100">
+                    <p class="quote">
+                        “Service exceptionnel et très professionnel. 
+                        J’ai obtenu un accompagnement juridique de grande qualité.”
+                    </p>
+
+                    <div class="client d-flex align-items-center mt-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" class="avatar">
+                        <div class="ms-3">
+                            <strong>Client A</strong><br>
+                            <small class="text-muted">Entrepreneur</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMOIGNAGE 2 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="testimonial-card p-4 h-100">
+                    <p class="quote">
+                        “Je recommande fortement ce cabinet. 
+                        Professionnalisme, écoute et efficacité.”
+                    </p>
+
+                    <div class="client d-flex align-items-center mt-4">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" class="avatar">
+                        <div class="ms-3">
+                            <strong>Client B</strong><br>
+                            <small class="text-muted">Particulier</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMOIGNAGE 3 -->
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="testimonial-card p-4 h-100">
+                    <p class="quote">
+                        “Résultats rapides et efficaces. 
+                        Une expertise juridique remarquable.”
+                    </p>
+
+                    <div class="client d-flex align-items-center mt-4">
+                        <img src="https://randomuser.me/api/portraits/men/65.jpg" class="avatar">
+                        <div class="ms-3">
+                            <strong>Client C</strong><br>
+                            <small class="text-muted">Chef d’entreprise</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FORMULAIRE CADA -->
+<section id="contact" class="py-5" style="background:#f8f9fa;">
+    <div class="container">
+
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Demande de consultation</h2>
+            <div class="divider"></div>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+
+                <form id="clientForm" class="p-4 shadow rounded bg-white">
+
+                    <div class="mb-3">
+                        <label>Nom complet</label>
+                        <input type="text" class="form-control" id="nom" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Email</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Téléphone</label>
+                        <input type="text" class="form-control" id="telephone" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Type de service</label>
+                        <select class="form-control" id="service">
+                            <option>Droit des affaires</option>
+                            <option>Droit de la famille</option>
+                            <option>Litiges</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label>Description du besoin</label>
+                        <textarea class="form-control" id="message"></textarea>
+                    </div>
+
+                    <!-- BOUTON ENVOI -->
+                    <button type="button" onclick="envoyerForm()" class="btn btn-success w-100">
+                        Envoyer votre formulaire
+                    </button>
+
+                    <!-- BOUTON TELECHARGER (CACHÉ AU DEBUT) -->
+                    <button type="button" onclick="telecharger()" 
+                            id="btnDownload" 
+                            class="btn btn-primary w-100 mt-3" 
+                            style="display:none;">
+                        Télécharger le formulaire
+                    </button>
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script> 
+let donneesClient = {};
+
+// ✅ ENVOI + ENREGISTREMENT
+function envoyerForm() {
+
+    const nom = document.getElementById("nom").value;
+    const email = document.getElementById("email").value;
+    const tel = document.getElementById("telephone").value;
+    const service = document.getElementById("service").value;
+    const message = document.getElementById("message").value;
+
+    // Validation
+    if (!nom || !email || !tel) {
+        alert("Veuillez remplir tous les champs obligatoires !");
+        return;
+    }
+
+    // Stockage
+    donneesClient = { nom, email, tel, service, message };
+
+    // Sauvegarde locale
+    localStorage.setItem("demandeClient", JSON.stringify(donneesClient));
+
+    // Afficher bouton télécharger
+    document.getElementById("btnDownload").style.display = "block";
+
+    alert("✅ Formulaire envoyé avec succès !");
+}
+
+// ✅ TELECHARGEMENT (VERSION PDF)
+function telecharger() {
+
+    const data = JSON.parse(localStorage.getItem("demandeClient"));
+
+    if (!data) {
+        alert("Aucune donnée trouvée !");
+        return;
+    }
+
+    const content = `
+CADA CONSULTING
+
+Nom : ${data.nom}
+Email : ${data.email}
+Téléphone : ${data.tel}
+Service : ${data.service}
+
+Description :
+${data.message}
+    `;
+
+    // 🔥 AJOUT PDF (sans supprimer ton code)
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    doc.setFont("Times", "Normal");
+    doc.setFontSize(12);
+
+    const lines = doc.splitTextToSize(content, 180);
+    doc.text(lines, 10, 20);
+
+    doc.save("demande_cada.pdf");
+
+    // 🔁 TON CODE ORIGINAL (laissé intact)
+    const blob = new Blob([content], { type: "text/plain" });
+    const link = document.createElement("a");
+
+    link.href = URL.createObjectURL(blob);
+    link.download = "demande_cada.txt";
+    link.click();
+}
+</script>
+
+<!-- CONTACT -->
+<section id="contact" class="section bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Contact</h2>
+
+        <div class="row">
+            <div class="col-md-6">
+                <form>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" placeholder="Nom">
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" class="form-control" placeholder="Email">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                    </div>
+                    <button class="btn btn-primary">Envoyer</button>
+                </form>
+            </div>
+
+            <div class="col-md-6">
+                <p><strong>Adresse :</strong> Kinshasa, RDC</p>
+                <p><strong>Email :</strong> contact@cada-consulting.com</p>
+
+                <iframe 
+                    src="https://maps.google.com/maps?q=kinshasa&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+                    width="100%" height="250" style="border:0;">
+                </iframe>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>© 2026 CADA Consulting - Tous droits réservés</p>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
